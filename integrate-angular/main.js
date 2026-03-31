@@ -1,13 +1,17 @@
 const { app, BrowserWindow } = require ('electron');
 const { create } = require('node:domain');
+const path = require('node:path');
 
 let win; 
 
 function createWindow() {
     win = new BrowserWindow({ width: 800, height: 600});
 
-    win.loadFile('index.html');
 
+    win.loadFile(path.join(__dirname, 'dist', 'integrate-angular', 'browser', 'index.html'));
+
+    win.loadURL(`http://localhost:4200`);
+    
     win.on ('closed', () => {
         win = null;
     });
