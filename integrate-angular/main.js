@@ -5,13 +5,20 @@ const path = require('node:path');
 let win; 
 
 function createWindow() {
-    win = new BrowserWindow({ width: 800, height: 600});
-
-
-    win.loadFile(path.join(__dirname, 'dist', 'integrate-angular', 'browser', 'index.html'));
+    win = new BrowserWindow({ width: 800, height: 600,
+        webPreferences:{
+            nodeIntegration: true,
+            contextIsolation: false
+        }
+    });
+    if (process.env.DEBUG){
 
     win.loadURL(`http://localhost:4200`);
     
+    }else{
+        win.loadURL(`file://${__dirname}/dist/integrate-angular/index.html`)
+    }
+
     win.on ('closed', () => {
         win = null;
     });
