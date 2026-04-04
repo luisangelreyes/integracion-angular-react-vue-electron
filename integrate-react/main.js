@@ -10,10 +10,13 @@ function createWindow() {
       contextIsolation: false
     }
   });
-   // const startUrl = path.join(__dirname, 'build', 'index.html');
-  win.loadFile(startUrl); 
 
-  win.loadURL('http://localhost:3000'); 
+  if (process.env.DEBUG){
+    win.loadURL('http://localhost:3000');
+  }else{ 
+    const startUrl = path.join(__dirname, 'build', 'index.html'); 
+      win.loadFile(startUrl); 
+  }
 
   win.on('closed', () =>{
     win = null;
