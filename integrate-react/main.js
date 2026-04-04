@@ -10,10 +10,14 @@ function createWindow() {
       contextIsolation: false
     }
   });
-    const startUrl = path.join(__dirname, 'build', 'index.html');
+   // const startUrl = path.join(__dirname, 'build', 'index.html');
   win.loadFile(startUrl); 
 
   win.loadURL('http://localhost:3000'); 
+
+  win.on('closed', () =>{
+    win = null;
+  });
 }
 
 app.whenReady().then(createWindow);
