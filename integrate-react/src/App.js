@@ -4,7 +4,7 @@ import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 import logo from './logo.svg';
 import './App.css';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router,Routes, Route, Link } from 'react-router-dom';
 
 function Index() {
  return <h2>Home</h2>;
@@ -22,7 +22,7 @@ function Files() {
     <Navbar.Heading>Mi App electron</Navbar.Heading>
     <Navbar.Divider />
     <Button minimal={true} icon="home" >
-       <Link to="/">Inicio</Link>
+       <Link to="/">home</Link>
     </Button>
     
     <Button minimal={true} icon="document" >  
@@ -32,6 +32,10 @@ function Files() {
 
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+ <Routes>
+    <Route path="/" element={<Index />} />
+    <Route path="/files" element={<Files />} />
+  </Routes>
 
         <h1>React Electron</h1>
         <p>
