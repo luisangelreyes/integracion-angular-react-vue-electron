@@ -3,7 +3,8 @@ let win;
 function createWindow() {
     win = new BrowserWindow({ width: 800, height: 600 });
     // win.loadFile('index.html');
-    win.loadURL(`file://${__dirname}/dist/index.html`);
+    //win.loadURL(`file://${__dirname}/dist/index.html`);
+    win.loadURL('http://localhost:8080');
     win.on('closed', () => {
         win = null;
     });
