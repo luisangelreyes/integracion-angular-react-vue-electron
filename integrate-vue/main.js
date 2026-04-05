@@ -2,9 +2,12 @@ const { app, BrowserWindow } = require('electron');
 let win;
 function createWindow() {
     win = new BrowserWindow({ width: 800, height: 600 });
-    // win.loadFile('index.html');
-    //win.loadURL(`file://${__dirname}/dist/index.html`);
+
+    if (process.env.DEBUG){
     win.loadURL('http://localhost:8080');
+    }else{
+    win.loadURL(`file://${__dirname}/dist/index.html`);
+    }
     win.on('closed', () => {
         win = null;
     });
