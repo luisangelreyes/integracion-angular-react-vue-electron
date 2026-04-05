@@ -7,10 +7,10 @@ import './App.css';
 import { HashRouter as Router,Routes, Route, Link } from 'react-router-dom';
 
 function Index() {
- return <h2>Home</h2>;
+ return <h2>Este es el inicio de mi App holaaaaa🖖</h2>;
 }
 function Files() {
- return <h2>Files</h2>;
+ return <h2>Aquí deberian haber documentos</h2>;
 }
 
   function App  () {
@@ -21,8 +21,9 @@ function Files() {
   <Navbar.Group align={Alignment.LEFT}>
     <Navbar.Heading>Mi App electron</Navbar.Heading>
     <Navbar.Divider />
+
     <Button minimal={true} icon="home" >
-       <Link to="/">home</Link>
+       <Link to="/">Inicio</Link>
     </Button>
     
     <Button minimal={true} icon="document" >  
@@ -31,7 +32,8 @@ function Files() {
 </Navbar>
 
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <img src="https://www.universalorlando.com/webdata/k2/es/us/files/Images/gds/usf-simpsons-donut-illustration-b.png" className= "App-logo"alt="hola"/>.
  <Routes>
     <Route path="/" element={<Index />} />
     <Route path="/files" element={<Files />} />
